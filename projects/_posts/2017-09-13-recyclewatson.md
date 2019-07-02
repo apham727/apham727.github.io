@@ -6,6 +6,7 @@ description: >
 image: /assets/img/recyclewatson.png
 noindex: true
 ---
+The github repo for this project can be found [here](https://github.com/apham727/RecycleWatson).
 
 This project was developed during my first hackathon as a freshman at Rice University. The app was created using the Python-Flask framework. It's purpose was to classify images using IBM watson to determine if the primary object in that image was recycleable. 
 

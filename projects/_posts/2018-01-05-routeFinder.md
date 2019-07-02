@@ -3,9 +3,10 @@ layout: post
 title: Route Destination Finder
 description: >
   A web application that finds convenient destinations along a route
-image: /assets/img/routeFinder.png
+image: /assets/img/routefinder.png
 noindex: true
 ---
+The git repo for this project can be found [here](https://github.com/apham727/FindAlongRoute).
 
 When my family and I were driving to Colorado back when I was ten, I remember my mom asking where the nearest gas station was and me thinking that it would be really convenient if Google Maps allowed me to search for gas stations along our current route. That inspired this project, though Google Maps later implemented this feature anyways.
 
