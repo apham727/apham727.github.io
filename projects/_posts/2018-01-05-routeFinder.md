@@ -3,7 +3,7 @@ layout: post
 title: Route Destination Finder
 description: >
   A web application that finds convenient destinations along a route
-image: assets\img\routefinder.png
+image: assets/img/routefinder.png
 noindex: true
 ---
 The git repo for this project can be found [here](https://github.com/apham727/FindAlongRoute).
