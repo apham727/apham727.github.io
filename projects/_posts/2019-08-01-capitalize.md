@@ -7,10 +7,11 @@ image: /assets/img/capitalize.png
 noindex: true
 ---
 
+
 In early August, I got the chance to attend the Capital One Software Engineering Summit
 in Clarendon, Virginia. During my time at the summit, I participated in a financial-service themed
 hackathon, where my team developed Capitalize, a full-stack web application in Angular + Node that
-allows users to find full travel packages within a specified budget. 
+allows users to find full travel packages within a specified budget. (The link to the github repo for this project can be found [here](https://github.com/apham727/Capitalize){:target="_blank"}).
 
 
 
