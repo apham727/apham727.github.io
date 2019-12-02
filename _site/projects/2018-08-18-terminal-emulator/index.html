@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v8.4.0 <https://hydejack.com/>
+-->
+
+
+
+
+
+
+
+
+
+
+
+<head>
+  
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+<meta name="robots" content="noindex">
+
+
+
+  
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Terminal Emulator/CLI | Andrew Pham</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Terminal Emulator/CLI" />
+<meta name="author" content="Andrew Pham" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A terminal with support for unix-like commands" />
+<meta property="og:description" content="A terminal with support for unix-like commands" />
+<link rel="canonical" href="http://localhost:4000/projects/2018-08-18-terminal-emulator/" />
+<meta property="og:url" content="http://localhost:4000/projects/2018-08-18-terminal-emulator/" />
+<meta property="og:site_name" content="Andrew Pham" />
+<meta property="og:image" content="http://localhost:4000/assets/img/terminal.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-08-18T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Terminal Emulator/CLI","dateModified":"2018-08-18T00:00:00-05:00","datePublished":"2018-08-18T00:00:00-05:00","url":"http://localhost:4000/projects/2018-08-18-terminal-emulator/","image":"http://localhost:4000/assets/img/terminal.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/projects/2018-08-18-terminal-emulator/"},"author":{"@type":"Person","name":"Andrew Pham"},"description":"A terminal with support for unix-like commands","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/icons/icon.png"},"name":"Andrew Pham"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  
+
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Andrew Pham">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="application-name" content="Andrew Pham">
+<meta name="msapplication-config" content="/assets/ieconfig.xml">
+
+
+<meta name="theme-color" content="rgb(25,55,71)">
+
+
+<meta name="generator" content="Hydejack v8.4.0" />
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Andrew Pham" />
+
+
+
+<link rel="alternate" href="http://localhost:4000/projects/2018-08-18-terminal-emulator/" hreflang="en">
+
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/icon.png">
+
+<link rel="manifest" href="/assets/manifest.json">
+
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+
+
+
+<link rel="dns-prefetch" href="/" id="_baseURL">
+<link rel="dns-prefetch" href="/assets/js/hydejack-8.4.0.js" id="_hrefJS">
+<link rel="dns-prefetch" href="/sw.js" id="_hrefSW">
+<link rel="dns-prefetch" href="/assets/bower_components/fontfaceobserver/fontfaceobserver.standalone.js" id="_hrefFFO">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.js" id="_hrefKatexJS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/katex.min.css" id="_hrefKatexCSS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/contrib/copy-tex.min.js" id="_hrefKatexCopyJS">
+<link rel="dns-prefetch" href="/assets/bower_components/katex/dist/contrib/copy-tex.min.css" id="_hrefKatexCopyCSS">
+<link rel="dns-prefetch" href="/assets/img/swipe.svg" id="_hrefSwipeSVG">
+
+
+
+
+<script>!function(e,t){"use strict";function n(e,t,n,r){e.addEventListener?e.addEventListener(t,n,r):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}e.loadJS=function(e,r){var o=t.createElement("script");o.src=e,r&&n(o,"load",r,{once:!0});var a=t.scripts[0];return a.parentNode.insertBefore(o,a),o},e._loaded=!1,e.loadJSDeferred=function(r,o){function a(){e._loaded=!0,o&&n(d,"load",o,{once:!0});var r=t.scripts[0];r.parentNode.insertBefore(d,r)}var d=t.createElement("script");return d.src=r,e._loaded?a():n(e,"load",a,{once:!0}),d},e.setRel=e.setRelStylesheet=function(e){function n(){this.rel="stylesheet"}var r=t.getElementById(e);r.addEventListener?r.addEventListener("load",n,{once:!0}):r.onload=n}}(window,document);
+!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+</script>
+
+<script>!function(w, d) {
+    w._noPushState = false;
+    w._noDrawer = false;
+
+    /**/
+    loadJS(d.getElementById('_hrefFFO').href, function() {
+      if ('Promise' in w) Promise.all([
+        new FontFaceObserver('Noto Sans').load(),
+        new FontFaceObserver('Roboto Slab').load(),
+      ]).then(function f() { d.body.classList.add('font-active'); }, function() {});
+    });
+    /**/
+}(window, document);</script>
+
+<!--[if gt IE 8]><!---->
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/hydejack-8.4.0.css">
+  <link rel="stylesheet" href="/assets/icomoon/style.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400|Noto+Sans:400,400i,700,700i">
+    <noscript>
+      <style>
+        html { font-family: Noto Sans, Helvetica, Arial, sans-serif!important; }
+        h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: Roboto Slab, Helvetica, Arial, sans-serif!important; }
+      </style>
+    </noscript>
+  
+
+
+  <style id="_pageStyle">
+
+.content a:not(.btn){color:#4fb1ba;border-color:rgba(79,177,186,0.2)}.content a:not(.btn):hover{border-color:#4fb1ba}:focus{outline-color:#4fb1ba !important}.btn-primary{color:#fff;background-color:#4fb1ba;border-color:#4fb1ba}.btn-primary:focus,.btn-primary.focus,.form-control:focus,.form-control.focus{box-shadow:0 0 0 3px rgba(79,177,186,0.5)}.btn-primary:hover,.btn-primary.hover{color:#fff;background-color:#409ba3;border-color:#409ba3}.btn-primary:disabled,.btn-primary.disabled{color:#fff;background-color:#4fb1ba;border-color:#4fb1ba}.btn-primary:active,.btn-primary.active{color:#fff;background-color:#409ba3;border-color:#409ba3}::selection{color:#fff;background:#4fb1ba}::-moz-selection{color:#fff;background:#4fb1ba}
+
+</style>
+
+
+<!--<![endif]-->
+
+
+
+
+</head>
+
+<body>
+  <div id="_navbar" class="navbar fixed-top">
+  <div class="content">
+    <div class="nav-btn-bar">
+      <span class="sr-only">Jump to:</span>
+      <a id="_menu" class="nav-btn no-hover fl" href="#_navigation">
+        <span class="sr-only">Navigation</span>
+        <span class="icon-menu"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<hr class="sr-only" hidden />
+
+
+<hy-push-state
+  replace-ids="_main"
+  link-selector="a[href]:not([href*='/assets/']):not(.external):not(.no-push-state)"
+  duration="250"
+  script-selector="script:not([type^='math/tex'])"
+  prefetch
+>
+  
+    <main
+  id="_main"
+  class="content fade-in layout-post"
+  role="main"
+  data-color="rgb(79,177,186)"
+  data-theme-color="rgb(25,55,71)"
+  
+    data-image="/assets/img/bigbend2.jpg"
+    data-overlay
+  
+  >
+  
+
+
+
+
+<article id="post-projects-terminal-emulator" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      
+        Terminal Emulator/CLI
+      
+    </h1>
+
+    <p class="post-date heading">
+      
+      <time datetime="2018-08-18T00:00:00-05:00">18 Aug 2018</time>
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+in <a href="/projects/" class="flip-title">Projects</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </p>
+
+    
+    
+      <div class="img lead sixteen-nine">
+        
+
+
+  <hy-img
+    
+    src="/assets/img/terminal.png"
+    
+    alt="Terminal Emulator/CLI"
+  
+    
+    root-margin="512px"
+  >
+    <noscript><img data-ignore 
+    src="/assets/img/terminal.png"
+    
+    alt="Terminal Emulator/CLI"
+  /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img>
+
+
+      </div>
+      
+    
+
+    
+
+
+
+  
+    <p class="message" >
+      A terminal with support for unix-like commands
+
+    </p>
+  
+
+
+  </header>
+
+  
+    <p>The code for the terminal can be found <a href="https://github.com/apham727/terminal-emulator">here</a>.</p>
+
+<p>The terminal was my first major project in Rust as part of the Rice Efficient Computing Group. My objective was to create a unix-like terminal to allow users to run commands/applications in the operating system.</p>
+
+<h1 id="starting-out">Starting Out</h1>
+<p>I had available three libraries (or “crates” in Rust):</p>
+<ol>
+  <li>library to capture keypresses</li>
+  <li>library to display text to a display buffer</li>
+  <li>library to run kernel tasks</li>
+</ol>
+
+<h1 id="stages-of-implementation">Stages of Implementation</h1>
+<p>I began by creating the functionality to run commands in the kernel. Using the 3rd library, I wrote a function to validate an input against existing commands and then execute the preset command upon validation.</p>
+
+<p>With this functionality in place, I moved to emulating terminal behavior. This involved recording user input, tracking/resetting prompts, mapping keypresses to certain actions, and echoing keypresses back to the terminal. It resulted in a very rudimentary terminal; however, the code was extremely messy and confusing. As a result, I added in the idea of standard input/output in the terminal for greater orthogonality.</p>
+
+<p>The final major stage was to beef up the terminal. I implemented a few common unix commands, better error handling, and some other features you would find in an everyday terminal like command history.</p>
+
+<h1 id="notes">Notes</h1>
+<p>The most difficult part in the early stages of the terminal was working with raw strings. Since at the end of the day, the display buffer only displayed the raw string that was passed to it, I had to meticulously index the display string to prevent out-of-bounds and overlap errors.</p>
+
+<p>Another concern that arose in the later stages of development was the separation between external libraries and internal components and commands. Take the <em>ls</em> command, for example. It would make sense to put <em>ls</em> as a separate application in a different crate than the terminal, but that would also incur large overheads everytime the command was invoked (because the kernel has to start a new process and context switch). However, leaving the logic inside the terminal would bloat the code. 
+For decisions like this, we would bias towards externalizing a lot of this logic for the sake of maintainability.</p>
+
+<h1 id="takeaways">Takeaways</h1>
+<p>Real-time input handling is hard. For example, this was the code that redirected keypresses and ran built-in functions.</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">loop</span> <span class="p">{</span>
+        <span class="c">// Handle cursor blink</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="n">text_display</span><span class="p">)</span> <span class="o">=</span> <span class="n">terminal</span><span class="py">.window</span><span class="nf">.get_displayable</span><span class="p">(</span><span class="o">&amp;</span><span class="n">display_name</span><span class="p">){</span>
+            <span class="n">text_display</span><span class="nf">.cursor_blink</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">terminal</span><span class="py">.window</span><span class="p">),</span> <span class="n">FONT_COLOR</span><span class="p">,</span> <span class="n">BACKGROUND_COLOR</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c">// Handles events from the print queue. The queue is "empty" is peek() returns None</span>
+        <span class="c">// If it is empty, it passes over this conditional</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="n">print_event</span><span class="p">)</span> <span class="o">=</span> <span class="n">terminal</span><span class="py">.print_consumer</span><span class="nf">.peek</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">match</span> <span class="n">print_event</span><span class="nf">.deref</span><span class="p">()</span> <span class="p">{</span>
+                <span class="o">&amp;</span><span class="nn">Event</span><span class="p">::</span><span class="nf">OutputEvent</span><span class="p">(</span><span class="k">ref</span> <span class="n">s</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                    <span class="n">terminal</span><span class="nf">.push_to_stdout</span><span class="p">(</span><span class="n">s</span><span class="py">.text</span><span class="nf">.clone</span><span class="p">());</span>
+
+                    <span class="c">// Sets this bool to true so that on the next iteration the TextDisplay will refresh AFTER the </span>
+                    <span class="c">// task_handler() function has cleaned up, which does its own printing to the console</span>
+                    <span class="n">terminal</span><span class="nf">.refresh_display</span><span class="p">(</span><span class="o">&amp;</span><span class="n">display_name</span><span class="p">);</span>
+                    <span class="n">terminal</span><span class="py">.correct_prompt_position</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+                <span class="p">},</span>
+                <span class="n">_</span> <span class="k">=&gt;</span> <span class="p">{</span> <span class="p">},</span>
+            <span class="p">}</span>
+            <span class="n">print_event</span><span class="nf">.mark_completed</span><span class="p">();</span>
+            <span class="c">// Goes to the next iteration of the loop after processing print event to ensure that printing is handled before keypresses</span>
+            <span class="n">continue</span><span class="p">;</span>
+        <span class="p">}</span> 
+
+
+        <span class="c">// Handles the cleanup of any application task that has finished running, including refreshing the display</span>
+        <span class="n">terminal</span><span class="nf">.task_handler</span><span class="p">()</span><span class="o">?</span><span class="p">;</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">terminal</span><span class="py">.correct_prompt_position</span> <span class="p">{</span>
+            <span class="n">terminal</span><span class="nf">.redisplay_prompt</span><span class="p">();</span>
+            <span class="n">terminal</span><span class="py">.correct_prompt_position</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="c">// Looks at the input queue from the window manager</span>
+        <span class="c">// If it has unhandled items, it handles them with the match</span>
+        <span class="c">// If it is empty, it proceeds directly to the next loop iteration</span>
+        <span class="k">let</span> <span class="n">event</span> <span class="o">=</span> <span class="k">match</span> <span class="n">terminal</span><span class="py">.window</span><span class="nf">.get_key_event</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nf">Some</span><span class="p">(</span><span class="n">ev</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                <span class="n">ev</span>
+            <span class="p">},</span>
+            <span class="n">_</span> <span class="k">=&gt;</span> <span class="p">{</span> <span class="n">continue</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="k">match</span> <span class="n">event</span> <span class="p">{</span>
+            <span class="c">// Returns from the main loop so that the terminal object is dropped</span>
+            <span class="nn">Event</span><span class="p">::</span><span class="n">ExitEvent</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                <span class="nd">trace!</span><span class="p">(</span><span class="s">"exited terminal"</span><span class="p">);</span>
+                <span class="nn">window_manager</span><span class="p">::</span><span class="nf">delete</span><span class="p">(</span><span class="n">terminal</span><span class="py">.window</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+                <span class="k">return</span> <span class="nf">Ok</span><span class="p">(());</span>
+            <span class="p">}</span>
+
+            <span class="nn">Event</span><span class="p">::</span><span class="nf">ResizeEvent</span><span class="p">(</span><span class="k">ref</span> <span class="n">_rev</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                <span class="n">terminal</span><span class="nf">.refresh_display</span><span class="p">(</span><span class="o">&amp;</span><span class="n">display_name</span><span class="p">);</span> <span class="c">// application refreshes display after resize event is received</span>
+            <span class="p">}</span>
+
+            <span class="c">// Handles ordinary keypresses</span>
+            <span class="nn">Event</span><span class="p">::</span><span class="nf">InputEvent</span><span class="p">(</span><span class="k">ref</span> <span class="n">input_event</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                <span class="n">terminal</span><span class="nf">.handle_key_event</span><span class="p">(</span><span class="n">input_event</span><span class="py">.key_event</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">display_name</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+                <span class="k">if</span> <span class="n">input_event</span><span class="py">.key_event.action</span> <span class="o">==</span> <span class="nn">KeyAction</span><span class="p">::</span><span class="n">Pressed</span> <span class="p">{</span>
+                    <span class="c">// only refreshes the display on keypresses to improve display performance </span>
+                    <span class="n">terminal</span><span class="nf">.refresh_display</span><span class="p">(</span><span class="o">&amp;</span><span class="n">display_name</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">_</span> <span class="k">=&gt;</span> <span class="p">{</span> <span class="p">}</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+
+<p>I learned to be careful about what functions I was calling in this loop to prevent “keypress lag”, because each 
+iteration of this loop would track a single keypress. It was a good exercise in writing efficient code!</p>
+
+  
+</article>
+
+
+<hr class="dingbat related" />
+
+
+
+
+  
+     
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4">
+  
+
+  
+    
+
+
+  <hy-img
+    
+    src="https://placehold.it/128x128"
+    class="avatar"
+    alt="Andrew Pham"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  
+    
+    root-margin="512px"
+  >
+    <noscript><img data-ignore 
+    src="https://placehold.it/128x128"
+    class="avatar"
+    alt="Andrew Pham"
+    srcset="https://placehold.it/128x128 1x,https://placehold.it/256x256 2x"
+    
+  /></noscript>
+    <span class="loading" slot="loading" hidden>
+      <span class="icon-cog"></span>
+    </span>
+  </hy-img>
+
+
+  
+
+  
+  
+  <h2  class="page-title hr">
+    About
+  </h2>
+
+  <p>A place for some of my projects I’ve been working on</p>
+
+
+  <div class="sidebar-social">
+    <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/andrewvpham" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/apham727" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+  </div>
+</div>
+
+  </aside>
+
+
+  
+
+  
+  
+
+  
+    
+
+
+
+
+<aside class="related mb4" role="complementary">
+  <h2 class="hr">Related Posts</h2>
+
+  <ul class="related-posts">
+    
+      
+
+
+<li>
+  <a href="/projects/2019-08-01-capitalize/" class="h4 flip-title">
+    <span>Capitalize</span>
+  </a>
+  <time class="heading faded fine" datetime="2019-08-01T00:00:00-05:00">01 Aug 2019</time>
+</li>
+
+    
+      
+
+
+<li>
+  <a href="/projects/2019-03-06-virtualFilesystem/" class="h4 flip-title">
+    <span>Virtual Filesystem</span>
+  </a>
+  <time class="heading faded fine" datetime="2019-03-06T00:00:00-06:00">06 Mar 2019</time>
+</li>
+
+    
+      
+
+
+<li>
+  <a href="/projects/2019-02-06-nps-app/" class="h4 flip-title">
+    <span>National Park Service Web App</span>
+  </a>
+  <time class="heading faded fine" datetime="2019-02-06T00:00:00-06:00">06 Feb 2019</time>
+</li>
+
+    
+  </ul>
+</aside>
+
+  
+
+  
+  
+
+
+  
+
+  
+<footer role="contentinfo">
+  <hr/>
+  
+  
+  <p><small>Powered by <a class="external" href="https://hydejack.com/">Hydejack</a> v<span id="_version">8.4.0</span></small></p>
+  <hr class="sr-only"/>
+</footer>
+
+
+</main>
+
+    <hy-drawer
+  class=""
+  align="left"
+  threshold="10"
+  touch-events
+  prevent-default
+>
+  <header id="_sidebar" class="sidebar" role="banner">
+    
+    <div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/bigbend2.jpg)"></div>
+
+    <div class="sidebar-sticky">
+      <div class="sidebar-about">
+        
+          <a class="no-hover" href="/" tabindex="-1">
+            <img src="/assets/icons/icon.png" class="avatar" alt="Andrew Pham" data-ignore />
+          </a>
+        
+        <h2 class="h1"><a href="/">Andrew Pham</a></h2>
+        
+        
+          <p class="">
+            A place to hold some of my projects I’ve been working on
+
+          </p>
+        
+      </div>
+
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+    
+      
+      <li>
+        <a
+          id="_navigation"
+          href="/projects/"
+          class="sidebar-nav-item active"
+          
+        >
+          Projects
+        </a>
+      </li>
+    
+      
+      <li>
+        <a
+          
+          href="/about/"
+          class="sidebar-nav-item"
+          
+        >
+          About
+        </a>
+      </li>
+    
+  
+</ul>
+
+      </nav>
+
+      
+
+      <div class="sidebar-social">
+        <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://www.linkedin.com/in/andrewvpham" title="LinkedIn" class="no-mark-external">
+      <span class="icon-linkedin2"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/apham727" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+      </div>
+    </div>
+  </header>
+</hy-drawer>
+<hr class="sr-only" hidden />
+
+  
+</hy-push-state>
+
+
+  <!--[if !IE]><!---->
+  <script>loadJSDeferred(document.getElementById('_hrefJS').href);</script>
+  
+
+  <!--<![endif]-->
+
+  
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      
+        navigator.serviceWorker.getRegistration()
+          .then(r => r.unregister())
+          .catch(() => {});
+      
+    }
+  </script>
+
+
+
+
+
+
+<h2 class="sr-only" hidden>Templates (for web app):</h2>
+
+<template id="_animation-template" hidden>
+  <div class="animation-main fixed-top">
+    <div class="content">
+      <div class="page"></div>
+    </div>
+  </div>
+</template>
+
+<template id="_loading-template" hidden>
+  <div class="loading nav-btn fr">
+    <span class="sr-only">Loading…</span>
+    <span class="icon-cog"></span>
+  </div>
+</template>
+
+<template id="_error-template" hidden>
+  <div class="page">
+    <h1 class="page-title">Error</h1>
+    
+    
+    <p class="lead">
+      Sorry, an error occurred while loading <a class="this-link" href=""></a>.
+
+    </p>
+  </div>
+</template>
+
+<template id="_back-template" hidden>
+  <a id="_back" class="back nav-btn fl no-hover">
+    <span class="sr-only">Back</span>
+    <span class="icon-arrow-left2"></span>
+  </a>
+</template>
+
+<template id="_permalink-template" hidden>
+  <a href="#" class="permalink">
+    <span class="sr-only">Permalink</span>
+    <span class="icon-link"></span>
+  </a>
+</template>
+
+
+
+
+</body>
+</html>

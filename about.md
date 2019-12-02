@@ -19,9 +19,8 @@ My name is **Andrew Pham**, and I am a junior studying Computer Science and Elec
 
 <div style="width:image width px; font-size:80%; text-align:center;">
   <img src="/assets/img/skating.jpg" style="width:50%; display: block; margin-right: auto; margin-left: auto; padding-bottom: 0.5em"/>
-  I'm actually terrible at ice skating
 </div>
-
+<!-- 
 
 
 
@@ -49,7 +48,7 @@ I'm also a huge signal processing fan - we have a super awesome electrical engin
 <div style="width:image width px; font-size:80%; text-align:center;">
 <img src="/assets/img/fourier.jpg" style="width:50%; display: block; margin-right: auto; margin-left: auto; padding-bottom: 0.5em"/>
   Fourier and Inverse Fourier Transform
-</div>
+</div> -->
 
 
 
